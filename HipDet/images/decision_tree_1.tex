@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\newdimen\nodeDist
+\nodeDist=27mm
+\begin{document}
+
+\begin{tikzpicture}[
+    node/.style={%
+      draw,
+      rectangle,
+      color=purple,
+    },
+  ]
+
+    \node [node] (A) {Lagrimeo};
+    \path (A) ++(-135:\nodeDist) node [node] (B) {Nada};
+    \path (A) ++(-45:\nodeDist) node [node] (C) {Astigmatismo};
+    \path (C) ++(-135:\nodeDist) node [node] (D) {Blandas};
+    \path (C) ++(-45:\nodeDist) node [node] (E) {Prescripción};
+	\path (E) ++(-135:\nodeDist) node [node] (F) {Nada};
+	\path (E) ++(-45:\nodeDist) node [node] (G) {Duras};
+
+
+    \draw (A) -- (B) node [left,pos=0.5] {reducido}(A);
+    \draw (A) -- (C) node [right,pos=0.5] {normal}(A);
+    \draw (C) -- (D) node [left,pos=0.5] {no}(A);
+    \draw (C) -- (E) node [right,pos=0.5] {si}(A);
+    \draw (E) -- (F) node [left,pos=0.5] {hipermetropía}(A);
+    \draw (E) -- (G) node [right,pos=0.5] {miopía}(A);
+\end{tikzpicture}
+
+\end{document} 

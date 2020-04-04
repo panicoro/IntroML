@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\newdimen\nodeDist
+\nodeDist=27mm
+\begin{document}
+
+\begin{tikzpicture}[
+    node/.style={%
+      draw,
+      rectangle,
+      color=purple,
+    },
+  ]
+
+    \node [node] (A) {Longitud};
+    \path (A) ++(-135:\nodeDist) node [node] (B) {Leer};
+    \path (A) ++(-45:\nodeDist) node [node] (C) {Saltar};
+
+
+    \draw (A) -- (B) node [left,pos=0.5] {corto}(A);
+    \draw (A) -- (C) node [right,pos=0.5] {largo}(A);
+\end{tikzpicture}
+
+\end{document} 
