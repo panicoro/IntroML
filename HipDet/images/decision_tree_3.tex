@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\newdimen\nodeDist
+\nodeDist=27mm
+\begin{document}
+
+\begin{tikzpicture}[
+    node/.style={%
+      draw,
+      rectangle,
+      color=purple,
+    },
+  ]
+
+    \node [node] (A) {Género};
+    \path (A) ++(-135:\nodeDist) node [node] (B) {Baile};
+    \path (A) ++(-45:\nodeDist) node [node] (C) {Vodka};
+	\path (B) ++(-135:\nodeDist) node [node] (D) {Cerveza};
+    \path (B) ++(-45:\nodeDist) node [node] (F) {Vodka};
+
+
+    \draw (A) -- (B) node [left,pos=0.5] {M}(A);
+    \draw (A) -- (C) node [right,pos=0.5] {F}(A);
+    \draw (B) -- (D) node [left,pos=0.5] {T}(A);
+    \draw (B) -- (F) node [right,pos=0.5] {F}(A);
+    
+    
+\end{tikzpicture}
+
+\end{document} 
