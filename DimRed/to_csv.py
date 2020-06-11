@@ -1,7 +1,7 @@
 # Python script to transform to cvs
 
-def get_csv():
-    f = open('T8_3_FOOTBALL.DAT')
+def get_csv(filename):
+    f = open(filename)
     data = f.read()
 
     lines = data.split('\n')
