@@ -1,4 +1,6 @@
 Tutorials/*
 Books/*
 *.zip
+*.tar.xz
+__pycache__/
 .ipynb_checkpoints
